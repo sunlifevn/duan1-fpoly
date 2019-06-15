@@ -1,0 +1,21 @@
+<Files .htaccess>
+Order Allow,Deny
+Deny from all
+</Files>
+ErrorDocument 404 /duan1/404.html
+
+RewriteEngine On
+RewriteRule ^([a-zA-Z0-9_-]+)-([0-9]+).html$ product.php?id=$2 [L]
+
+RewriteRule ^([a-zA-Z0-9_-]+)-([0-9]+)$ category.php?id=$2 [L]
+
+RewriteRule ^gio-hang$ cart.php [L]
+RewriteRule ^lien-he$ contact.php [L]
+RewriteRule ^gioi-thieu$ about.php [L]
+
+
+RewriteRule ^tin-tuc$ page.php [L]
+# http://localhost/duan1/tin-tuc/sale-50-toan-bo-cac-mon-9.html
+RewriteRule ^tin-tuc/([a-zA-Z0-9_-]+)-([0-9]+).html$ page-single.php?id=$2 [L]
+
+
